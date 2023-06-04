@@ -26,7 +26,7 @@ const recordupdate = () => ({
 export const loadrecord = () => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:8080/api/record`)
+      .get(`https://sachin-server.onrender.com/api/record`)
       .then((res) => {
         dispatch(getrecord(res.data));
       })
@@ -39,7 +39,7 @@ export const loadrecord = () => {
 export const deleteRecord = (id) => {
   return function (dispatch) {
     axios
-      .delete(`http://localhost:8080/api/record/${id}`)
+      .delete(`https://sachin-server.onrender.com/api/record/${id}`)
       .then((res) => {
         dispatch(recorddelete());
         dispatch(loadrecord());
@@ -53,7 +53,7 @@ export const deleteRecord = (id) => {
 export const addRecord = (record, toast) => {
   return function (dispatch) {
     axios
-      .post(`http://localhost:8080/api/record/post`, record)
+      .post(`https://sachin-server.onrender.com/api/record/post`, record)
       .then((res) => {
         dispatch(recordAdded());
 
@@ -82,7 +82,7 @@ export const addRecord = (record, toast) => {
 export const getSingleRecord = (id) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:8080/api/record/${id}`)
+      .get(`https://sachin-server.onrender.com/api/record/${id}`)
       .then((res) => {
         console.log(res.data);
         dispatch(getsinglerecord(res.data));
@@ -96,7 +96,7 @@ export const getSingleRecord = (id) => {
 export const updateRecord = (record, id) => {
   return function (dispatch) {
     axios
-      .patch(`http://localhost:8080/api/record/${id}`, record)
+      .patch(`https://sachin-server.onrender.com/api/record/${id}`, record)
       .then((res) => {
         console.log(res.data);
         dispatch(recordupdate());
